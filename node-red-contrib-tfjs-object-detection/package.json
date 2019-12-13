@@ -1,0 +1,36 @@
+{
+    "name": "node-red-contrib-tfjs-object-detection",
+    "version": "0.0.1",
+    "description": "TensorFlow.js Object Detection model Node-RED node",
+    "dependencies": {
+        "@tensorflow/tfjs-node": "*",
+        "@tensorflow-models/coco-ssd": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.ibm.com/va/node-red-tensorflowjs"
+    },
+    "license": "Apache-2.0",
+    "keywords": [
+        "tensorflow.js",
+        "tensorflowjs",
+        "tensorflow",
+        "tf.js",
+        "tfjs",
+        "node-red",
+        "nodered",
+        "machine learning"
+    ],
+    "node-red": {
+        "nodes": {
+            "tfjs-object-detection": "node/tfjs-object-detection.js"
+        }
+    },
+    "contributors": [
+        "Paul Van Eck (https://github.com/pvaneck)",
+        "Ted Chang (https://github.com/tedhtchang)",
+        "Ton Ngo (https://github.com/tonanhngo)",
+        "va barbosa (https://github.com/vabarbosa/)",
+        "Yi-Hong Wang (https://github.com/yhwang)"
+    ]
+}

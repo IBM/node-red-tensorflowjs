@@ -1,0 +1,37 @@
+<script type="text/html" data-template-name="tfjs-object-detection">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-modelUrl"><i class="fa fa-globe"></i> Model URL</label>
+        <input type="text" id="node-input-modelUrl" placeholder="e.g. http://localhost/model/model.json">
+    </div>
+    <div>
+      <small>
+        If no URL is specified, then a model will be downloaded from a default public endpoint.
+      </small>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="tfjs-object-detection">
+   <p>A TensorFlow.js node to run prediction using the Coco SSD model for object detection.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('tfjs-object-detection', {
+        category: 'machine learning',
+        defaults: {
+            name: { value: "" },
+            modelUrl: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        paletteLabel: "tfjs object detection",
+        color: "#ff9100",
+        icon: "tf-logo.png",
+        label: function() {
+            return this.name || "tfjs object detection";
+        }
+    });
+</script>
