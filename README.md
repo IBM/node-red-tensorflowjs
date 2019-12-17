@@ -101,7 +101,7 @@ Before running and using a TensorFlow.js model in a Node-RED application, a Tens
     $ cd ~/.node-red
     ```
 
-1. Install the `node-red-contrib-tfjs-object-detection` node found in this repo (using the full directory path noted when the repo was clone)
+1. Install the `node-red-contrib-tfjs-object-detection` node found in this repo (using the full directory path noted when the repo was cloned)
     ```
     $ npm install <full path>/node-red-contrib-tfjs-object-detection
     ```
@@ -113,7 +113,7 @@ If it is running, you will then need to restart Node-RED for the newly installed
 
 ### Import the Node-RED flow
 
-Once installed the node can be added and used in a flow of your Node-RED application. To import the flows available in this repo:
+Once installed the node can be added and used in the flow of your Node-RED application. To import the flows available in this repo:
 
 1. Start your Node-RED application
 1. Open a browser and go to your Node-RED Editor
@@ -121,9 +121,9 @@ Once installed the node can be added and used in a flow of your Node-RED applica
 1. Click on **Import**
 1. Select the **Clipboard** tab
 1. Click on **select a file to import**
-1. Browse to and select the flow file in the cloned repo (e.g., `<full path>/flows/browser-flow.json`)
-  - If just trying things out on your browser, then you can use `browser-flow.json`.
-  - If using a Raspberry Pi with peripherals, then you can use `raspberrypi-flows.json`.
+1. Browse to and select one of the flow files in the cloned repo
+    - If trying things out locally on your browser, then use the `browser-flow.json`.
+    - If using a Raspberry Pi with peripherals, then use the `raspberrypi-flows.json`.
 1. Select **Import to new flow**
 1. Click **Import**
 
@@ -152,10 +152,10 @@ Additionally, a few custom nodes are needed and can be added through the
 [Palette Manager](https://nodered.org/docs/user-guide/runtime/adding-nodes):
 
 - [`node-red-contrib-image-output`](https://flows.nodered.org/node/node-red-contrib-image-output)
-- [`node-red-contrib-usbcamera`](https://flows.nodered.org/node/node-red-contrib-usbcamera) if using a USB camera.
-    - If using this, you must also install `fswebcam` on the Raspberry Pi by running `sudo apt install fswebcam`.
 - [`node-red-contrib-camerapi`](https://flows.nodered.org/node/node-red-contrib-camerapi) if using a Raspberry Pi
   [Camera Module](https://www.raspberrypi.org/products/camera-module-v2/)
+- [`node-red-contrib-usbcamera`](https://flows.nodered.org/node/node-red-contrib-usbcamera) if using a USB camera.
+    - If using this node, you must also install `fswebcam` on the Raspberry Pi by running `sudo apt install fswebcam`.
 
 
 ##### Deploy and run on Raspberry Pi
@@ -177,8 +177,8 @@ Make sure all your hardware is connected, then:
 1. Double click on `Play Audio File` exec node and change the path in the append section to the path of
    a `.wav` file of your choosing. Click `Done` when finished.
 1. Click the **Deploy** button.
-1. Trigger the camera.
-    a. Can manually trigger the snapshot by clicking the `Take Photo` inject node.
+1. Trigger the camera.  
+    a. Can manually trigger the snapshot by clicking the `Take Photo` inject node.  
     b. If using the motion sensor flow, motion near the sensor will trigger the camera.
 
 **Note**: Feel free to change the detected object by editing the code in the `isObjectDetected` node.
@@ -198,8 +198,8 @@ The browser flow uses custom nodes which need to be [added to the Palette Manage
 From the Node-RED dashboard, do the following:
 
 1. Click the **Deploy** button.
-1. Upload or capture an image  .
-    a. Click the `file inject` node and browse to an image.
+1. Upload or capture an image.  
+    a. Click the `file inject` node and browse to an image.  
     b. Click the `camera` node and allow the browser to access the webcam.
 
 The image will be processed by the `tfjs object detection` node and the output will be displayed in the **Debug** panel. If the browser supports the Web Audio API the objects detected will be spoken.
