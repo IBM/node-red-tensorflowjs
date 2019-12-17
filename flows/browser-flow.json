@@ -2,14 +2,7 @@
     {
         "id": "ccb1e78f.c9f478",
         "type": "tab",
-        "label": "Object Detection (browser)",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "85d0df04.9b572",
-        "type": "tab",
-        "label": "Object Detection (pi)",
+        "label": "Browser Flow",
         "disabled": false,
         "info": ""
     },
@@ -425,15 +418,5 @@
                 "453b1c6c.b7aa9c"
             ]
         ]
-    },
-    {
-        "id": "13c740aa.df3797",
-        "type": "comment",
-        "z": "85d0df04.9b572",
-        "name": "TODO: add object detection flow for Raspberry PI",
-        "info": "",
-        "x": 305.5,
-        "y": 87,
-        "wires": []
     }
 ]
