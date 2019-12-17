@@ -1,0 +1,394 @@
+[
+    {
+        "id": "8bfc607d.72ebf",
+        "type": "tab",
+        "label": "Basic Raspberry Pi Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b85e6de8.76be6",
+        "type": "tab",
+        "label": "Motion Sensor Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "20f653aa.58a8ac",
+        "type": "inject",
+        "z": "8bfc607d.72ebf",
+        "name": "Take Photo",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 340,
+        "wires": [
+            [
+                "6cf9c0e8.e68eb"
+            ]
+        ]
+    },
+    {
+        "id": "abed2cc2.ed753",
+        "type": "function",
+        "z": "8bfc607d.72ebf",
+        "name": "isObjectDetected",
+        "func": "let personDetected = false;\n\nfor (let object of msg.payload) {\n    if (object.class === 'person') {\n        personDetected = true;\n        break;\n    }\n}\nmsg.payload = personDetected;\nconsole.log(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "11a38d00.749e53"
+            ]
+        ]
+    },
+    {
+        "id": "14ad11f2.fd0f4e",
+        "type": "debug",
+        "z": "8bfc607d.72ebf",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 710,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "eb247e31.ca30d",
+        "type": "tfjs-object-detection",
+        "z": "8bfc607d.72ebf",
+        "name": "",
+        "modelUrl": "",
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "14ad11f2.fd0f4e",
+                "abed2cc2.ed753"
+            ]
+        ]
+    },
+    {
+        "id": "6cf9c0e8.e68eb",
+        "type": "usbcamera",
+        "z": "8bfc607d.72ebf",
+        "filemode": "0",
+        "filename": "image01.jpg",
+        "filedefpath": "1",
+        "filepath": "",
+        "fileformat": "jpeg",
+        "resolution": "2",
+        "name": "",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "eb247e31.ca30d",
+                "f5384a80.731668"
+            ]
+        ]
+    },
+    {
+        "id": "11a38d00.749e53",
+        "type": "switch",
+        "z": "8bfc607d.72ebf",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 910,
+        "y": 260,
+        "wires": [
+            [
+                "ce7a3a36.a4e618"
+            ],
+            [
+                "873a11dd.3269a"
+            ]
+        ]
+    },
+    {
+        "id": "ce7a3a36.a4e618",
+        "type": "exec",
+        "z": "8bfc607d.72ebf",
+        "command": "aplay",
+        "addpay": false,
+        "append": "/home/pi/Downloads/get.wav",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Play Audio File",
+        "x": 1120,
+        "y": 200,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "873a11dd.3269a",
+        "type": "debug",
+        "z": "8bfc607d.72ebf",
+        "name": "Object not detected",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1140,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f5384a80.731668",
+        "type": "image",
+        "z": "8bfc607d.72ebf",
+        "name": "",
+        "width": "240",
+        "x": 480,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "74d44f63.e45a1",
+        "type": "inject",
+        "z": "b85e6de8.76be6",
+        "name": "Take Photo",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "550b1151.09f07"
+            ]
+        ]
+    },
+    {
+        "id": "709272f3.514a5c",
+        "type": "function",
+        "z": "b85e6de8.76be6",
+        "name": "isObjectDetected",
+        "func": "let personDetected = false;\n\nfor (let object of msg.payload) {\n    if (object.class === 'person') {\n        personDetected = true;\n        break;\n    }\n}\nmsg.payload = personDetected;\nconsole.log(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 140,
+        "wires": [
+            [
+                "cd4073c8.29c91"
+            ]
+        ]
+    },
+    {
+        "id": "8694e306.1f247",
+        "type": "debug",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 710,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7bb0f11b.f086a",
+        "type": "tfjs-object-detection",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "modelUrl": "",
+        "x": 500,
+        "y": 80,
+        "wires": [
+            [
+                "8694e306.1f247",
+                "709272f3.514a5c"
+            ]
+        ]
+    },
+    {
+        "id": "550b1151.09f07",
+        "type": "usbcamera",
+        "z": "b85e6de8.76be6",
+        "filemode": "0",
+        "filename": "image01.jpg",
+        "filedefpath": "1",
+        "filepath": "",
+        "fileformat": "jpeg",
+        "resolution": "2",
+        "name": "",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "7bb0f11b.f086a",
+                "f14b1d95.7ce61"
+            ]
+        ]
+    },
+    {
+        "id": "cd4073c8.29c91",
+        "type": "switch",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 910,
+        "y": 140,
+        "wires": [
+            [
+                "4a4e39a4.bfe008"
+            ],
+            [
+                "dbbde0b9.8c14b"
+            ]
+        ]
+    },
+    {
+        "id": "4a4e39a4.bfe008",
+        "type": "exec",
+        "z": "b85e6de8.76be6",
+        "command": "aplay",
+        "addpay": false,
+        "append": "/home/pi/Downloads/get.wav",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Play Audio File",
+        "x": 1120,
+        "y": 80,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dbbde0b9.8c14b",
+        "type": "debug",
+        "z": "b85e6de8.76be6",
+        "name": "Object not detected",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1140,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f39e73e.85b3e9",
+        "type": "rpi-gpio in",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "pin": "8",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "34c5ffc1.4e5e"
+            ]
+        ]
+    },
+    {
+        "id": "34c5ffc1.4e5e",
+        "type": "switch",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 420,
+        "wires": [
+            [
+                "550b1151.09f07"
+            ]
+        ]
+    },
+    {
+        "id": "f14b1d95.7ce61",
+        "type": "image",
+        "z": "b85e6de8.76be6",
+        "name": "",
+        "width": "240",
+        "x": 540,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5bb7b15b.a79f2",
+        "type": "comment",
+        "z": "b85e6de8.76be6",
+        "name": "Trigger camera if motion is detected.",
+        "info": "If the motion sensor attached to the GPIO pins of the Raspberry Pi detects motion, the output will be 1. The switch node will trigger the camera if its input is 1.",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "597b6f4c.51721",
+        "type": "comment",
+        "z": "8bfc607d.72ebf",
+        "name": "Check detected classes for specific object.",
+        "info": "",
+        "x": 800,
+        "y": 320,
+        "wires": []
+    }
+]
