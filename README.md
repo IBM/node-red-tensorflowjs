@@ -45,6 +45,11 @@ When you have completed this code pattern, you will understand how to:
 - JavaScript / Node.js
 
 
+## Watch the Video
+
+[![](https://img.youtube.com/vi/6sFrQaDtK5Q/0.jpg)](https://www.youtube.com/watch?v=6sFrQaDtK5Q)
+
+
 ## Steps
 
 Follow these steps to setup and run this code pattern. The steps are described in detail below.
