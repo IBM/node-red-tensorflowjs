@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/IBM/node-red-tensorflowjs.svg?branch=master)](https://travis-ci.org/IBM/node-red-tensorflowjs)
+
 # Developing a Machine Learning IoT App with Node-RED and TensorFlow.js
 
 In most cases, enabling your IoT device with AI capabilities involves sending the data from the device to a server. The machine learning calculations would happen on the server. Then the results sent back to the device for appropriate action.

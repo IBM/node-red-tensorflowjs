@@ -32,5 +32,14 @@
         "Ton Ngo (https://github.com/tonanhngo)",
         "va barbosa (https://github.com/vabarbosa/)",
         "Yi-Hong Wang (https://github.com/yhwang)"
-    ]
+    ],
+    "devDependencies": {
+        "mocha": "^7.0.0",
+        "node-red": "^1.0.3",
+        "node-red-node-test-helper": "^0.2.3",
+        "standard": "^14.3.1"
+    },
+    "scripts": {
+        "test": "standard && mocha \"test/**/*_spec.js\""
+    }
 }

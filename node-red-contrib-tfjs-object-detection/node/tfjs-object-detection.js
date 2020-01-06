@@ -34,7 +34,7 @@ module.exports = function (RED) {
     })
 
     // load the TensorFlow.js COCO-SSD model
-    cocoSsd.load({modelUrl: node.modelUrl}).then(model => {
+    cocoSsd.load({ modelUrl: node.modelUrl }).then(model => {
       node.model = model
       node.status({
         fill: 'green',
