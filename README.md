@@ -90,12 +90,20 @@ please install it using instructions found [here](https://nodered.org/docs/getti
 If you are using a Raspberry Pi, instructions for Node-RED can be found [here](https://nodered.org/docs/getting-started/raspberrypi).
 However, if you are using the Raspbian operating system for the Raspberry Pi, Node-RED comes pre-installed.
 
-After installation, Node-RED can be started by running:
+#### Start Node-RED
+
+Node-RED can be started from a terminal by running:
 ```
-node-red
+$ node-red
 ```
 
-The Node-RED dashboard can be accessed from `http://localhost:1880`.
+#### Stop Node-RED
+
+You can stop Node-RED by closing the terminal window or using `Ctrl-C` in the terminal.
+
+#### Node-RED editor
+
+The Node-RED editor can be accessed from `http://localhost:1880`.
 
 However, if Node-RED is on the Raspberry Pi, you can connect to it via `http://<Raspberry Pi IP>:1880`.
 
@@ -116,13 +124,13 @@ Before running and using a TensorFlow.js model in a Node-RED application, a Tens
     > **NOTE**: _Currently, the installation of the `@tensorflow/tfjs-node` dependency [requires Python 2.7]((https://github.com/tensorflow/tfjs/tree/master/tfjs-node#windows--mac-os-x-requires-python-27)). Bindings will not properly install with Python 3.x._
     >
 
-If it is running, you will then need to restart Node-RED for the newly installed nodes to be recognized.
+If it is running, you will then need to stop and restart Node-RED for the newly installed nodes to be recognized.
 
 ### Import the Node-RED flow
 
 Once installed the node can be added and used in the flow of your Node-RED application. To import the flows available in this repo:
 
-1. Start your Node-RED application
+1. Make sure Node-RED is running
 1. Open a browser and go to your Node-RED Editor
 1. Click on the Node-RED Menu
 1. Click on **Import**
@@ -202,7 +210,7 @@ The browser flow uses custom nodes which need to be [added to the Palette Manage
 
 ##### Deploy and run locally
 
-From the Node-RED dashboard, do the following:
+From the Node-RED editor, do the following:
 
 1. Click the **Deploy** button.
 1. Upload or capture an image.  
