@@ -138,10 +138,10 @@ Once installed the node can be added and used in the flow of your Node-RED appli
 
 The Node-RED flow can be deployed in multiple ways. Follow the options that best fits your use case:
 
-- [Run on a Raspberry Pi](#run-on-a-raspberry-pi)
-- [Run from a browser](#run-from-a-browser)
+- [Running on a Raspberry Pi](#running-on-a-raspberry-pi)
+- [Running on a laptop or workstation](#running-on-a-laptop-or-workstation)
 
-#### Run on a Raspberry Pi
+#### Running on a Raspberry Pi
 
 The Raspberry Pi flows use hardware peripherals and Raspberry Pi specific nodes. This assumes you imported
 the `raspberrypi-flows.json` file.
@@ -165,7 +165,7 @@ Additionally, a few custom nodes are needed and can be added through the
     - If using this node, you must also install `fswebcam` on the Raspberry Pi by running `sudo apt install fswebcam`.
 
 
-##### Deploy and run on Raspberry Pi
+##### Deploy and run on a Raspberry Pi
 
 The imported flows file contains two flows:
 
@@ -190,7 +190,7 @@ Make sure all your hardware is connected, then:
 
 **Note**: Feel free to change the detected object by editing the code in the `isObjectDetected` node.
 
-#### Run from a browser
+#### Running on a laptop or workstation
 
 ##### Pre-requisites
 
