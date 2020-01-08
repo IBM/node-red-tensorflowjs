@@ -51,6 +51,12 @@ When you have completed this code pattern, you will understand how to:
 
 [![](https://img.youtube.com/vi/6sFrQaDtK5Q/0.jpg)](https://www.youtube.com/watch?v=6sFrQaDtK5Q)
 
+## Prerequisites
+
+- [git](https://git-scm.com/downloads) installed and configured
+- [Node.js](https://nodejs.org/en/) installation (with NPM)
+- [Python 2.7](https://www.python.org/download/releases/2.7/) environment
+- Familiarity with basic [Node-RED](https://nodered.org/docs/) concepts
 
 ## Steps
 
@@ -121,7 +127,7 @@ Before running and using a TensorFlow.js model in a Node-RED application, a Tens
     $ npm install <full path>/node-red-contrib-tfjs-object-detection
     ```
 
-    > **NOTE**: _Currently, the installation of the `@tensorflow/tfjs-node` dependency [requires Python 2.7]((https://github.com/tensorflow/tfjs/tree/master/tfjs-node#windows--mac-os-x-requires-python-27)). Bindings will not properly install with Python 3.x._
+    > **NOTE**: _Currently, the installation of the `@tensorflow/tfjs-node` dependency [requires Python 2.7](https://github.com/tensorflow/tfjs/tree/master/tfjs-node#windows--mac-os-x-requires-python-27). Bindings will not properly install with Python 3.x._
     >
 
 If it is running, you will then need to stop and restart Node-RED for the newly installed nodes to be recognized.
