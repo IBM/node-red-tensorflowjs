@@ -7,38 +7,6 @@
         "info": ""
     },
     {
-        "id": "6e18a0db.6e8f9",
-        "type": "websocket-listener",
-        "z": "",
-        "path": "/va/vermin",
-        "wholemsg": "false"
-    },
-    {
-        "id": "2a8d900e.3860b",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "",
-        "broker": "broker.hivemq.com",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": ""
-    },
-    {
         "id": "3aaffa94.740bee",
         "type": "ui_base",
         "theme": {
