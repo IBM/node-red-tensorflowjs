@@ -3,12 +3,12 @@
     "version": "0.0.1",
     "description": "TensorFlow.js Object Detection model Node-RED node",
     "dependencies": {
-        "@tensorflow/tfjs-node": "*",
+        "@tensorflow/tfjs-node": "1.4.0",
         "@tensorflow-models/coco-ssd": "*"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.ibm.com/va/node-red-tensorflowjs"
+        "url": "https://github.com/IBM/node-red-tensorflowjs"
     },
     "license": "Apache-2.0",
     "keywords": [
