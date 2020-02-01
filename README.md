@@ -28,7 +28,7 @@ When you have completed this code pattern, you will understand how to:
 1. The user owns or downloads a machine learning model in TensorFlow.js format.
 1. The user creates a Node-RED node for the TensorFlow.js model and wires the TensorFlow.js node in a Node-RED application.
 1. The user can deploy the Node-RED application locally.
-1. The uses access the Node-RED application from a browser and triggers inferencing on images captured from a webcam.
+1. The user can access the Node-RED application from a browser and can trigger inferencing on images captured from a webcam.
 1. Alternatively, the user can deploy the Node-RED application to a Raspberry Pi.
 1. The device runs the Node-RED application and performs inferencing on images from a camera.
 1. The device can output to a connected speaker or take some other action depending on the inference results.
@@ -63,8 +63,7 @@ When you have completed this code pattern, you will understand how to:
 Follow these steps to setup and run this code pattern. The steps are described in detail below.
 
 1. [Clone the repo](#clone-the-repo)
-1. [Install Node-RED](#install-node-red)
-1. [Install the TensorFlow.js node](#install-the-tensorflowjs-node)
+1. [Install dependencies](#install-dependencies)
 1. [Import the Node-RED flow](#import-the-node-red-flow)
 1. [Deploy the Node-RED flow](#deploy-the-node-red-flow)
 
@@ -78,27 +77,33 @@ do the following:
     $ git clone https://github.com/IBM/node-red-tensorflowjs
     ```
 
-1. Take note of the directory of the cloned repo (e.g., `/Users/myuser/node-red-tensorflowjs`)
+1. Move into the directory of the cloned repo
     ```
     $ cd node-red-tensorflowjs
-    $ pwd
     ```
 
 **Note**: For Raspberry Pi users, details on accessing the command line can be found in the
 [remote access documentation](https://www.raspberrypi.org/documentation/remote-access/) if not
 connecting with a screen and keyboard.
 
-### Install Node-RED
+### Install dependencies
 
-If you don't already have Node-RED installed and plan to run it locally,
-please install it using instructions found [here](https://nodered.org/docs/getting-started/local).
+1. Install the necessary dependencies by running:
+    ```
+    $ npm install
+    ```
 
 If you are using a Raspberry Pi, instructions for Node-RED can be found [here](https://nodered.org/docs/getting-started/raspberrypi).
 However, if you are using the Raspbian operating system for the Raspberry Pi, Node-RED comes pre-installed.
 
 #### Start Node-RED
 
-Node-RED can be started from a terminal by running:
+Node-RED can be started from a terminal by running this command from within the directory of the cloned repository:
+```
+$ npm start
+```
+
+Alternatively, if you have Node-RED installed globally, you can start Node-RED from any directory:
 ```
 $ node-red
 ```
@@ -112,25 +117,6 @@ You can stop Node-RED by closing the terminal window or using `Ctrl-C` in the te
 The Node-RED editor can be accessed from `http://localhost:1880`.
 
 However, if Node-RED is on the Raspberry Pi, you can connect to it via `http://<Raspberry Pi IP>:1880`.
-
-### Install the TensorFlow.js node
-
-Before running and using a TensorFlow.js model in a Node-RED application, a TensorFlow.js node will need to be created and installed to your Node-RED environment. From a terminal run:
-
-1. Go into your Node-RED user directory (e.g., `~/.node-red`)
-    ```
-    $ cd ~/.node-red
-    ```
-
-1. Install the `node-red-contrib-tfjs-object-detection` node found in this repo (using the full directory path noted when the repo was cloned)
-    ```
-    $ npm install <full path>/node-red-contrib-tfjs-object-detection
-    ```
-
-    > **NOTE**: _Currently, the installation of the `@tensorflow/tfjs-node` dependency [requires Python 2.7](https://github.com/tensorflow/tfjs/tree/master/tfjs-node#windows--mac-os-x-requires-python-27). Bindings will not properly install with Python 3.x._
-    >
-
-If it is running, you will then need to stop and restart Node-RED for the newly installed nodes to be recognized.
 
 ### Import the Node-RED flow
 
@@ -204,16 +190,6 @@ Make sure all your hardware is connected, then:
 
 **Note**: Feel free to change the detected object by editing the code in the `isObjectDetected` node.
 
-#### Running on a laptop or workstation
-
-##### Pre-requisites
-
-The browser flow uses custom nodes which need to be [added to the Palette Manager](https://nodered.org/docs/user-guide/runtime/adding-nodes):
-
-- [`node-red-contrib-browser-utils`](https://flows.nodered.org/node/node-red-contrib-browser-utils)
-- [`node-red-contrib-play-audio`](https://flows.nodered.org/node/node-red-contrib-play-audio)
-- [`node-red-contrib-image-output`](https://flows.nodered.org/node/node-red-contrib-image-output)
-
 ##### Deploy and run locally
 
 From the Node-RED editor, do the following:
@@ -224,7 +200,6 @@ From the Node-RED editor, do the following:
     b. Click the `camera` node and allow the browser to access the webcam.
 
 The image will be processed by the `tfjs object detection` node and the output will be displayed in the **Debug** panel. If the browser supports the Web Audio API the objects detected will be spoken.
-
 
 ## Output
 
