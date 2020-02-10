@@ -1,0 +1,32 @@
+{
+  "name": "node-red-tensorflowjs",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/IBM/node-red-tensorflowjs.svg?branch=master)](https://travis-ci.org/IBM/node-red-tensorflowjs)",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "node-red": "^1.0.3",
+    "node-red-contrib-browser-utils": "0.0.9",
+    "node-red-contrib-image-output": "^0.5.2",
+    "node-red-contrib-play-audio": "^2.4.0",
+    "node-red-contrib-tfjs-object-detection": "file:node-red-contrib-tfjs-object-detection",
+    "node-red-dashboard": "^2.19.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-red"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IBM/node-red-tensorflowjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IBM/node-red-tensorflowjs/issues"
+  },
+  "homepage": "https://github.com/IBM/node-red-tensorflowjs#readme"
+}
