@@ -166,6 +166,8 @@
         "type": "image",
         "z": "8bfc607d.72ebf",
         "name": "",
+        "data":"payload",
+        "dataType":"msg",
         "width": "240",
         "x": 480,
         "y": 420,

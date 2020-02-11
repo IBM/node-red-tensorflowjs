@@ -24,7 +24,7 @@
     "url": "git+https://github.com/IBM/node-red-tensorflowjs.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/IBM/node-red-tensorflowjs/issues"
   },
