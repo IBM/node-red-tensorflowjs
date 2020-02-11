@@ -352,6 +352,8 @@
         "type": "image",
         "z": "ccb1e78f.c9f478",
         "name": "",
+        "data":"payload",
+        "dataType":"msg",
         "width": 160,
         "x": 377,
         "y": 230,

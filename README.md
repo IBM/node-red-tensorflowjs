@@ -12,7 +12,7 @@ With this code pattern, you will learn how to build and deploy machine learning 
 
 [TensorFlow.js](https://js.tensorflow.org) is an open source JavaScript library to build, train, and run machine learning models in JavaScript environments such as the browser and Node.js.
 
-Combining Node-RED with TensorFlow.js  developers and IoT enthusiasts can more easily add machine learning functionality onto their devices.
+Combining Node-RED with TensorFlow.js developers and IoT enthusiasts can more easily add machine learning functionality onto their devices.
 
 When you have completed this code pattern, you will understand how to:
 
@@ -62,22 +62,22 @@ When you have completed this code pattern, you will understand how to:
 
 Follow these steps to setup and run this code pattern. The steps are described in detail below.
 
-1. [Clone the repo](#clone-the-repo)
-1. [Install dependencies](#install-dependencies)
-1. [Import the Node-RED flow](#import-the-node-red-flow)
-1. [Deploy the Node-RED flow](#deploy-the-node-red-flow)
+1. [Clone the repo](#1-clone-the-repo)
+1. [Install dependencies](#2-install-dependencies)
+1. [Import the Node-RED flow](#3-import-the-node-red-flow)
+1. [Deploy the Node-RED flow](#4-deploy-the-node-red-flow)
 
-### Clone the repo
+### 1. Clone the repo
 
 First let's get the code. From the terminal of the system you plan on running Node-RED from,
 do the following:
 
-1. Clone the `node-red-tensorflowjs` repo
+1. Clone the `node-red-tensorflowjs` repo:
     ```
     $ git clone https://github.com/IBM/node-red-tensorflowjs
     ```
 
-1. Move into the directory of the cloned repo
+1. Move into the directory of the cloned repo:
     ```
     $ cd node-red-tensorflowjs
     ```
@@ -86,15 +86,33 @@ do the following:
 [remote access documentation](https://www.raspberrypi.org/documentation/remote-access/) if not
 connecting with a screen and keyboard.
 
-### Install dependencies
+### 2. Install dependencies
 
-1. Install the necessary dependencies by running:
-    ```
-    $ npm install
-    ```
+You can install the necessary dependencies by running:
 
-If you are using a Raspberry Pi, instructions for Node-RED can be found [here](https://nodered.org/docs/getting-started/raspberrypi).
-However, if you are using the Raspbian operating system for the Raspberry Pi, Node-RED comes pre-installed.
+```
+$ npm install
+```
+
+This will install Node-RED along with any necessary custom node packages for running the browser flow
+in the local `node_modules` folder, and you can move on to [starting Node-RED](#start-node-red).
+
+*Alternatively*, if you already have Node-RED installed on your system, you can just install
+the dependencies from your Node-RED user directory (`~/.node-red`). Run the following block of code, being
+sure to change the `<full path>` placeholder to the path of the cloned repo:
+
+```
+cd ~/.node-red
+npm install <full path>/node-red-contrib-tfjs-object-detection
+npm install node-red-contrib-browser-utils node-red-contrib-play-audio node-red-contrib-image-output
+```
+
+Be sure to restart Node-RED if it was already running when installing this way.
+
+**Note**: If you are using a Raspberry Pi, instructions for installing Node-RED can be found
+[here](https://nodered.org/docs/getting-started/raspberrypi). However, if you are using the Raspbian
+operating system for the Raspberry Pi, Node-RED comes pre-installed, so you can just install
+dependencies from the `~/.node-red` directory.
 
 #### Start Node-RED
 
@@ -103,7 +121,8 @@ Node-RED can be started from a terminal by running this command from within the 
 $ npm start
 ```
 
-Alternatively, if you have Node-RED installed globally, you can start Node-RED from any directory:
+Alternatively, if you have Node-RED installed globally with dependencies installed under `~./node-red`,
+you can start Node-RED from any directory:
 ```
 $ node-red
 ```
@@ -118,7 +137,7 @@ The Node-RED editor can be accessed from `http://localhost:1880`.
 
 However, if Node-RED is on the Raspberry Pi, you can connect to it via `http://<Raspberry Pi IP>:1880`.
 
-### Import the Node-RED flow
+### 3. Import the Node-RED flow
 
 Once installed the node can be added and used in the flow of your Node-RED application. To import the flows available in this repo:
 
@@ -134,9 +153,9 @@ Once installed the node can be added and used in the flow of your Node-RED appli
 1. Select **Import to new flow**
 1. Click **Import**
 
-### Deploy the Node-RED flow
+### 4. Deploy the Node-RED flow
 
-The Node-RED flow can be deployed in multiple ways. Follow the options that best fits your use case:
+The Node-RED flow can be deployed in multiple ways. Follow the option that best fits your use case:
 
 - [Running on a Raspberry Pi](#running-on-a-raspberry-pi)
 - [Running on a laptop or workstation](#running-on-a-laptop-or-workstation)
@@ -190,7 +209,7 @@ Make sure all your hardware is connected, then:
 
 **Note**: Feel free to change the detected object by editing the code in the `isObjectDetected` node.
 
-##### Deploy and run locally
+#### Running on a laptop or workstation
 
 From the Node-RED editor, do the following:
 
@@ -199,7 +218,8 @@ From the Node-RED editor, do the following:
     a. Click the `file inject` node and browse to an image.  
     b. Click the `camera` node and allow the browser to access the webcam.
 
-The image will be processed by the `tfjs object detection` node and the output will be displayed in the **Debug** panel. If the browser supports the Web Audio API the objects detected will be spoken.
+The image will be processed by the `tfjs object detection` node and the output will be displayed in the **Debug** panel.
+If the browser supports the Web Audio API, the objects detected will be spoken.
 
 ## Output
 
