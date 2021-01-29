@@ -12,7 +12,7 @@
     "node-red-contrib-image-output": "^0.5.2",
     "node-red-contrib-play-audio": "^2.4.0",
     "node-red-contrib-tfjs-object-detection": "file:node-red-contrib-tfjs-object-detection",
-    "node-red-dashboard": "^2.19.3"
+    "node-red-dashboard": "^2.26.2"
   },
   "devDependencies": {},
   "scripts": {
