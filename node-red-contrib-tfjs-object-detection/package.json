@@ -34,7 +34,7 @@
         "Yi-Hong Wang (https://github.com/yhwang)"
     ],
     "devDependencies": {
-        "mocha": "^8.0.1",
+        "mocha": "^8.4.0",
         "node-red": "^1.1.2",
         "node-red-node-test-helper": "^0.2.5",
         "standard": "^14.3.4"
