@@ -7,14 +7,30 @@
     "doc": "doc"
   },
   "dependencies": {
-    "node-red": "^1.0.3",
-    "node-red-contrib-browser-utils": "0.0.9",
-    "node-red-contrib-image-output": "^0.5.2",
-    "node-red-contrib-play-audio": "^2.4.0",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs-converter": "^4.22.0",
+    "@tensorflow/tfjs-core": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "node-red": "^5.0.7",
+    "node-red-contrib-browser-utils": "^0.0.11",
+    "node-red-contrib-image-output": "^0.6.4",
+    "node-red-contrib-play-audio": "^2.5.0",
     "node-red-contrib-tfjs-object-detection": "file:node-red-contrib-tfjs-object-detection",
-    "node-red-dashboard": "^2.19.3"
+    "node-red-dashboard": "^3.6.6"
   },
-  "devDependencies": {},
+  "overrides": {
+    "@mapbox/node-pre-gyp": {
+      "tar": "$tar"
+    },
+    "adm-zip": "$adm-zip",
+    "tar": "$tar",
+    "qs": "$qs"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.6.1",
+    "tar": "^7.5.21",
+    "qs": "^6.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node-red"
