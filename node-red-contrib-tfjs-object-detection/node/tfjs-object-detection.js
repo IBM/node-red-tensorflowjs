@@ -1,3 +1,16 @@
+// Ensure legacy util methods removed in Node.js >=22 are polyfilled for @tensorflow/tfjs-node compatibility
+const util = require('util')
+/* eslint-disable n/no-deprecated-api */
+if (typeof util.isNullOrUndefined !== 'function') {
+  util.isNullOrUndefined = function (val) {
+    return val === null || val === undefined
+  }
+}
+if (typeof util.isArray !== 'function') {
+  util.isArray = Array.isArray
+}
+/* eslint-enable n/no-deprecated-api */
+
 // called when the runtime loads the node on startup
 module.exports = function (RED) {
   let tf = null

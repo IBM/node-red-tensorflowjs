@@ -3,8 +3,10 @@
     "version": "0.0.2",
     "description": "TensorFlow.js Object Detection model Node-RED node",
     "dependencies": {
-        "@tensorflow/tfjs-node": "^2.0.1",
-        "@tensorflow-models/coco-ssd": "^2.1.0"
+        "@tensorflow/tfjs-core": "^4.22.0",
+        "@tensorflow/tfjs-converter": "^4.22.0",
+        "@tensorflow/tfjs-node": "^4.22.0",
+        "@tensorflow-models/coco-ssd": "^2.2.3"
     },
     "repository": {
         "type": "git",
@@ -34,12 +36,23 @@
         "Yi-Hong Wang (https://github.com/yhwang)"
     ],
     "devDependencies": {
-        "mocha": "^8.0.1",
-        "node-red": "^1.1.2",
-        "node-red-node-test-helper": "^0.2.5",
-        "standard": "^14.3.4"
+        "adm-zip": "^0.6.1",
+        "mocha": "^12.0.2",
+        "node-red": "^5.0.7",
+        "node-red-node-test-helper": "^0.3.6",
+        "qs": "^6.16.0",
+        "standard": "^17.1.2",
+        "tar": "^7.5.21"
     },
     "scripts": {
         "test": "standard && mocha \"test/**/*_spec.js\""
+    },
+    "overrides": {
+        "@mapbox/node-pre-gyp": {
+            "tar": "$tar"
+        },
+        "adm-zip": "$adm-zip",
+        "tar": "$tar",
+        "qs": "$qs"
     }
 }
